@@ -52,13 +52,40 @@ const user=[
 // console.log(user[1].name);//square brackets to access array then dot operator to access object property.
 // console.log(user[0].rollno);
 
-console.log(jsUser);
-console.log(Object.keys(jsUser));//prints all the keys in an object.
-console.log(Object.values(jsUser));//prints all the values in an object.
-console.log(Object.entries(jsUser));//prints all the key-value pairs(properties) of object.
+// console.log(jsUser);
+// console.log(Object.keys(jsUser));//prints all the keys in an object.
+// console.log(Object.values(jsUser));//prints all the values in an object.
+// console.log(Object.entries(jsUser));//prints all the key-value pairs(properties) of object.
 
-console.log(jsUser.hasOwnProperty('isLoggedIn'));//Works as "include" method.
+// console.log(jsUser.hasOwnProperty('isLoggedIn'));//Works as "include" method.
 //gives the boolean value if the property exist or not in the object.
+
+// *******************Destructuring Objects*************************
+
+const course={
+    name:"JS in hindi",
+    price:299,
+    courseInstructor:"Hitesh"
+}
+
+const {courseInstructor}=course;
+console.log(courseInstructor);
+
+const {courseInstructor:Instructor}=course;
+console.log(Instructor);
+//Both syntax works.
+
+// We also read about APIs which are JSON files. Its like a nameless objects and arrays.(format of file)
+ // {
+//  "name": "JS in hindi",
+//  "price": "free",
+//   "teacher":"hitesh"      
+// this is the format of the JSON file .
+// };
+// [
+//     {},{}
+// ]
+// we can use JSON file formatter to arrange a JSON file and understand it.
 
 
 
