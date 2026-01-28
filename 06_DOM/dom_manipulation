@@ -1,0 +1,47 @@
+we can manipulate DOM using console or selecting elements on the webpage .
+like selecting classes , id ot particular tags .
+Three types of selectors are there :-
+1) getElementById()
+2) getElementByclassName()
+3) querySelector()
+
+suppose there is an element with id=title.
+then we can store that element in a variable like
+//                       const myFirst=document.getElementById('title')
+we can access different id names , classname
+                      document.getElementById('title').id         // print id
+                      document.getElementById('title').classname  // prints class 
+      document.getElementById('title').getAttributes() // gives all the attributes used.
+       document.getElementById('title').setAttributes() // used to set new attributes.
+    ex- document.getElementById('title').setAttributes('class','heading') //
+                   a new class named heading has been added
+                  myFirst.style.backgroundColor="green"
+                myFirst.style.padding="10px"    // changing some style to the id.
+
+now , innerText, innerHTML, textcontent 
+innerHTML: (tags + text)
+textcontent: Raw text only, Includes hidden text
+innerText: Rendered (visible) text, Matches what the user actually sees
+
+
+we can use querySelector to select any element , wheather it is id, classname or tag.
+querySelector('h1') := selects the first h1 element.
+querySelector(#title):= # is used to select the id
+querySelector(.heading):= . is used to select class.
+querySelectorAll():= it is used to select all elements.
+
+document.getElementsByClassName("item"); // HTMLCollection
+document.getElementsByTagName("div");    // HTMLCollection
+document.querySelectorAll(".item");      // NodeList
+
+we can convert nodelist/htmlcollection to Array
+const array = Array.from(nodes);
+
+at nodelist we cannot directly access each element , we need to give index no to access it .
+After converting it to array, we can use foreach and map method.
+
+ex:= document.querySelectorAll('h2')
+we get a nodelist of all h2
+now to access each h2 , either we use foreach loop or 
+const h2All=document.querySelectorAll('h2')
+h2All[0].innerText
