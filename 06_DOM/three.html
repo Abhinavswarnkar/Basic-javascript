@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+  
+</body>
+<script>
+  const div=document.createElement('div');
+  console.log(div);
+  div.className='main';
+  div.id='my-Id';
+  div.setAttribute('title','generated-title')//It takes input in key-value pairs
+  div.style.backgroundColor='green';
+  div.style.padding='12px';
+  //  div.innerText='chai aur code';
+/*This way of adding innertext is not an optimized approach beacuse JS brings inntertext then replaces the value with your new value . therefore ot takes a roundtrip and memory consumption or workload is more */
+const text=document.createTextNode("chai aur code");
+div.appendChild(text);
+// This is more optimized way to add text .
+document.body.appendChild(div);
+
+
+</script>
+</html>
