@@ -34,6 +34,28 @@ buttons.forEach(function (button) {
   });
 });
 
+```
+## project2 BMI solution code
 
+```javascript
+const form = document.querySelector('form');
+// this use will give you empty values for height and weight
+// const height=parseInt(document.querySelector('#height'))
+// agar bahar likh denge submit event ke to jab page load hoga usi time empty values store ho jaayega isliye height aur wieght ki value submit ke baad select krre.
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if ((height === '' || height < 0 || isNaN(height))) {
+    results.innerHTML = `your valid height is${height} `;
+  } else if ((weight === '' || weight < 0 || isNaN(weight))) {
+    results.innerHTML = `your valid weight is${weight}`;
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    results.innerHTML = `${bmi}`;
+  }
+});
 
 ```
