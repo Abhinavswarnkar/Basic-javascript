@@ -68,3 +68,17 @@ form.addEventListener('submit', function (e) {
 });
 
 ```
+
+## project 3 digital clock sol code
+```javascript
+const clock=document.getElementById('clock')
+
+
+setInterval(function(){
+  let date=new Date()
+ clock.innerHTML= date.toLocaleTimeString()
+},1000)
+
+//Time is always given in milliseconds therefore 1000 ms is 1 sec .
+// set interval basically runs the function at regular interval of 1 sec.
+```
