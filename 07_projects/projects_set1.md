@@ -176,3 +176,39 @@ function newGame(){
 })
 }
 ```
+
+## project6 change bgcolor
+```javascript
+// generate random color
+
+let randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+let intervalId;
+
+let startChangingColor = function () {
+ if(!intervalId){
+  intervalId = setInterval(bgColor, 1000);
+}};
+// here we check the interval id is null or empty ...if it is null then only it sets the interval.
+
+let bgColor = function () {
+  document.body.style.backgroundColor = randomColor();
+};
+
+let stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId=null;
+  //once we press stops the interval id becomes null.
+};
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+// if we dont assign null to interval id when we press stop.. then multiple interval id will run simultaneously and color will start changing fast.
+```
