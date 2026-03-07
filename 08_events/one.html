@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+   <script>
+   
+    // attachEvent()
+    // jquery-onEvent()
+  //  owl.onclick=function(){
+  //   alert('owl is clicked')
+
+  //  const owl=document.querySelector('#owl')
+  //   owl.addEventListener('click',function(e){
+  //     console.log('owl is clicked')
+  //     console.log(e.target)
+  //   e.stopPropagation()}, false)
+
+    // we have used stop propagation here ...which stops the propagation or event bubbling .
+
+      // const images=document.querySelector('#images')
+      // images.addEventListener('click',function(e){
+      //   console.log('image is clicked');
+      //   console.log(e.target);} ,false)
+
+    // true or false denotes event propagation.
+    // false goes from inside to outside which is known as event bubbling.
+    // true goes from outside to inside which is known as event capturing. 
+
+    // const google=document.getElementById('google')
+    // google.addEventListener('click',function(e){
+    //   e.preventDefault()
+    //    console.log('google is clicked')            
+    // })
+    // the default action of the event is prevented bu using default prevent method. 
+
+    // *********************** A small task**********************
+    // as soon as we click an image it should get removed 
+
+  //   const images=document.querySelector('#images')
+  //  images.addEventListener('click',function(e){
+  //        console.log(e.target);
+  //        console.log(e.target.parentNode);
+  //       //  by using e.target .parentNode I am getting the parent element Li of target ...we need to remove parent element li to properly remove the photo on click.\
+  //       let removeIt=e.target.parentNode
+  //       removeIt.remove()
+  //       // first we store the parent element in a variable , then remove method is used to remove the whole variable.
+  //       // removeIt.parentNode.removeChild(removeIt)
+  //       // in this we call the parent of li that is Ul then using removeChild we remove the li
+         
+  //  },false)
+// when we click on google it removes whole ul bcoz it is an li and ul is parent node. there fore to stop that we can use strict checks using if/else
+
+const images=document.querySelector('#images')
+images.addEventListener('click',function(e){
+ 
+  console.log(e.target.tagName);
+  e.preventDefault()
+  if(e.target.tagName==='IMG'){
+     let removeIt=e.target.parentNode
+        removeIt.remove()
+  }
+  
+})
+// this is how you can apply checks
+// you can print the id also using e.target.id
+
+   </script>
+</body>
+</html>

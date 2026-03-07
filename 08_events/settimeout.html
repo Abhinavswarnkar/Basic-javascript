@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chai aur code</title>
+</head>
+<body>
+  <h2>Chai aur code</h2>
+   <button id="stop">stop</button>
+</body>
+<script>
+  setTimeout(function(){
+    console.log('Abhinav');
+  },2000)
+  // setTimeout() is used to execute a function after a specified delay (in milliseconds).
+
+  let sayAbhinav=()=>{
+    console.log('Abhinav popped up')
+    document.querySelector('h2').innerHTML='JS series'
+  }
+  const noChange=setTimeout(sayAbhinav,5000)
+  // we can also pass a function as a handler for setTimeout. 
+  document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(noChange);
+   console.log('stopped');
+   
+  })
+
+</script>
+</html>
